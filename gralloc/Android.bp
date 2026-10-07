@@ -43,6 +43,7 @@ cc_library_shared {
     vendor: true,
     header_libs: [
         "display_headers",
+        "qti_msm_ion_headers_sm7325",
     ],
     include_dirs: [
         "system/memory/libion/include",
