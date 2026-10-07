@@ -102,11 +102,13 @@ cc_library_headers {
         "libhardware_headers",
         "display_intf_headers",
         "display_debug_headers",
+        "qti_display_kernel_headers_sm7325",
     ],
     export_header_lib_headers: [
         "libhardware_headers",
         "display_intf_headers",
         "display_debug_headers",
+        "qti_display_kernel_headers_sm7325",
     ],
 }
 
