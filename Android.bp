@@ -9,14 +9,12 @@ soong_config_module_type {
         "gralloc4",
         "gralloc_handle_has_no_reserved_size",
         "udfps",
-        "sm7325_kernel_headers",
         "default",
     ],
     properties: [
         "cflags",
         "srcs",
         "header_libs",
-        "export_header_lib_headers",
     ],
 }
 
@@ -85,28 +83,8 @@ cc_library_headers {
     ],
 }
 
-// sm7325 kernel-specific headers, gated
-qtidisplay_cc_defaults {
-    name: "qtidisplay_sm7325_headers_defaults",
-    soong_config_variables: {
-        sm7325_kernel_headers: {
-            header_libs: [
-                "qti_display_kernel_headers_sm7325",
-                "qti_drm_headers_sm7325",
-                "qti_msm_ion_headers_sm7325",
-                "qti_mem_buf_header_sm7325",
-            ],
-            export_header_lib_headers: [
-                "qti_display_kernel_headers_sm7325",
-                "qti_drm_headers_sm7325",
-            ],
-        },
-    },
-}
-
 cc_library_headers {
     name: "display_headers",
-    defaults: ["qtidisplay_sm7325_headers_defaults"],
     vendor: true,
     export_include_dirs: [
         "include",
@@ -124,11 +102,15 @@ cc_library_headers {
         "libhardware_headers",
         "display_intf_headers",
         "display_debug_headers",
+        "qti_display_kernel_headers_sm7325",
+        "qti_drm_headers_sm7325",
     ],
     export_header_lib_headers: [
         "libhardware_headers",
         "display_intf_headers",
         "display_debug_headers",
+        "qti_display_kernel_headers_sm7325",
+        "qti_drm_headers_sm7325",
     ],
 }
 

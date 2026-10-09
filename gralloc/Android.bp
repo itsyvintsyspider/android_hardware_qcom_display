@@ -36,13 +36,14 @@ cc_library_shared {
 //libgralloccore
 cc_library_shared {
     name: "libgralloccore",
-    defaults: ["qtidisplay_defaults", "qtidisplay_sm7325_headers_defaults"],
+    defaults: ["qtidisplay_defaults"],
     sanitize: {
         integer_overflow: true,
     },
     vendor: true,
     header_libs: [
         "display_headers",
+        "qti_msm_ion_headers_sm7325",
     ],
     include_dirs: [
         "system/memory/libion/include",

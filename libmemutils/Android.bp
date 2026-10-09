@@ -1,7 +1,7 @@
 cc_library_shared {
 
     name: "libmemutils",
-    defaults: ["qtidisplay_defaults", "qtidisplay_sm7325_headers_defaults"],
+    defaults: ["qtidisplay_defaults"],
     sanitize: {
         integer_overflow: true,
     },
@@ -13,6 +13,8 @@ cc_library_shared {
     header_libs: [
         "display_headers",
         "qti_kernel_headers",
+        "qti_mem_buf_header_sm7325",
+        "qti_msm_ion_headers_sm7325",
     ],
     cflags: [
         "-Wno-missing-field-initializers",
